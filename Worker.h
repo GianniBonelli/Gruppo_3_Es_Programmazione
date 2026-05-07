@@ -22,9 +22,8 @@ public:
     /// @{
         Worker();
         /// @brief Main Constructor that get an ID and the state of
-        /// @param deviceID unique, should be different for each actuator
-        /// @param status  
-        Worker(int badgeID, bool status, WorkerType workertype);
+        /// @param deviceID unique, should be different for each actuator  
+        Worker(int badgeID, WorkerType workertype);
 
         ~Worker();
 
@@ -42,7 +41,7 @@ public:
 
     /// @name GETTERS
     /// @{
-        
+        int GetBadgeID();       
     /// @}
 
     /// @name SETTERS
@@ -67,15 +66,6 @@ public:
     private: 
         ///@param deviceID unique Identifier.
         int badgeID;
-
-        ///@param state 1 = is active, 0 = not active.
-        bool status;
-
-        /// @param actuatorType the ActuatorType that define the actuator.
-        ActuatorType actuatorType;
-
-
-    
 };
 
 enum class WorkerType{
