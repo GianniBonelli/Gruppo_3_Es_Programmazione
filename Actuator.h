@@ -24,7 +24,7 @@ public:
         /// @brief Main Constructor that get an ID and the state of
         /// @param deviceID unique, should be different for each actuator
         /// @param status  
-        Actuator(int deviceID, bool status);
+        Actuator(int deviceID, bool status, ActuatorType actuatorType);
 
         ~Actuator();
 
@@ -45,6 +45,9 @@ public:
         Actuator* GetActuator(); // TODO: Manage the pointer of the individual actuator object
         ///@brief To get the current actuator state
         ///@return the current actuator state 
+        ActuatorType GetActuatorType();
+        ///@brief To get the current ActuatorType.
+        ///@return the ActuatorType.
         bool GetState();
     /// @}
 
