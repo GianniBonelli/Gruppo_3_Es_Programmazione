@@ -24,7 +24,7 @@ public:
         /// @brief Main Constructor that get an ID and the state of
         /// @param deviceID unique, should be different for each actuator
         /// @param status  
-        Actuator(int deviceID, bool status);
+        Actuator(int deviceID, bool status, ActuatorType actuatorType);
 
         ~Actuator();
 
@@ -38,21 +38,30 @@ public:
 
     /// @name BASIC HANDLING
     /// @{
+    ///@brief 
+    bool isAuthorized(float badgeValue);
     /// @}
 
     /// @name GETTERS
     /// @{
+        ///@brief get the pointer to the actuator.
+        ///@return the pointer to the actuator object.
         Actuator* GetActuator(); // TODO: Manage the pointer of the individual actuator object
+
         ///@brief To get the current actuator state
         ///@return the current actuator state 
+        ActuatorType GetActuatorType();
+
+        ///@brief To get the current ActuatorType.
+        ///@return the ActuatorType.
         bool GetState();
     /// @}
 
     /// @name SETTERS
     /// @{
-        
         /// @brief To set actuatorID
-        void SetID();
+        ///@param newDeviceID new unique Identifier.
+        void SetDeviceID(int newDeviceID);
 
 
     ///}@
@@ -76,9 +85,6 @@ public:
 
         /// @param actuatorType the ActuatorType that define the actuator.
         ActuatorType actuatorType;
-
-
-    
 };
 
 enum class ActuatorType{
