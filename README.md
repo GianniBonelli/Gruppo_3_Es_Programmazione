@@ -1,3 +1,4 @@
 # Gruppo_3_Es_Programmazione
 
-Gianni Bonelli : 
+TODO:
+-Add Badge Management
