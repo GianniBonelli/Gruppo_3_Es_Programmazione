@@ -8,9 +8,8 @@
 
 
 #include"Mode.h"
-#include"LogicManager.h"
 #include"Sensor.h"
-//#include"Actuator.h"
+#include"Actuator.h"
 
 #include<vector>
 
@@ -30,8 +29,8 @@ public:
         /// @param roomType the room type expressed by: 
         /// - Mode::Office
         /// - Mode::Lab
-        ///- Mode::Storage
-        ///- Mode::Neutral
+        /// - Mode::Storage
+        /// - Mode::Neutral
         /// @param roomID a int used to easily recognize a specific room.
         Room(Mode roomType, int roomID);
 
@@ -101,7 +100,7 @@ public:
 
         /// @param sensorList a list that contain all the pointer to the Sensors created.
         std::vector<Sensor*> sensorList;
-        //std::vector<Actuator*> actuatorsList;
+        std::vector<Actuator*> actuatorsList;
 };
 
 #endif

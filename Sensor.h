@@ -47,7 +47,7 @@ public:
         Sensor* GetSensor(); // TODO: Manage the pointer of the individual sensor object
         ///@brief To get the current sensor Value
         ///@return the current Value read by the sensor expressed post conditioning
-        float GetCurrentVaule();
+        float GetCurrentValue();
         /// @brief To get the time beetweem each Polling
         /// @return Return the time expressed in ms  
         float GetTimeIntervals();
