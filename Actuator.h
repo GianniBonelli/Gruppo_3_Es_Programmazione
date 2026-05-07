@@ -7,6 +7,7 @@
 #define ACTUATOR_H
 
 #include"Room.h"
+#include"Worker.h"
 
 //#include<ctime> 
 
@@ -39,9 +40,12 @@ public:
 
     /// @name BASIC HANDLING
     /// @{
-    ///@brief 
-    bool isAuthorized(int badgeValue);
+    ///@brief to get the authorization to enter certain Room
+    ///@param badgeID unique badgeID 
+        bool isAuthorized(int badgeID, WorkerType workerType, ActuatorType actuatorType); //from a csv/json file: {[name: Pippo ][bagdeID: 01234][workerType: Ricercatore]} 
     /// @}
+
+
 
     /// @name GETTERS
     /// @{

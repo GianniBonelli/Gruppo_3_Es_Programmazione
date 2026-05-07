@@ -7,8 +7,8 @@
 #define WORKER.H
 
 #include"Room.h"
-
-//#include<ctime> 
+#include<string> 
+#include<vector>
 
 /// @class Worker
 /// @brief to manage an Worker 
@@ -23,7 +23,7 @@ public:
         Worker();
         /// @brief Main Constructor that get an ID and the state of
         /// @param deviceID unique, should be different for each actuator  
-        Worker(int badgeID, WorkerType workertype);
+        Worker(int badgeID, WorkerType workerType);
 
         ~Worker();
 
@@ -41,6 +41,12 @@ public:
 
     /// @name GETTERS
     /// @{
+        ///@brief to get the worker type.
+        ///@return the worker type.
+        WorkerType GetWorkerType();
+
+        /// @brief to get the unique badgeID
+        /// @return the @p badgeID
         int GetBadgeID();       
     /// @}
 
@@ -50,12 +56,16 @@ public:
         /// @brief To set badgeID
         void SetBadgeID();
 
+        /// @brief to set the workerTyper.
+        /// @param workerType the new workerType.
+        void SetWorketType(WorkerType workerType);
+
 
     ///}@
 
     /// @name DEBUG and SERIALIZATION
     /// @{
-        ///@brief Dump all the workers data stored 
+        ///@brief Dump all the workers data stored. 
         void Dump();
 
     /// @}
@@ -64,8 +74,14 @@ public:
     
 
     private: 
-        ///@param deviceID unique Identifier.
+        ///@param badgeID unique code for each worker.
         int badgeID;
+
+        /// @param name of the worker.
+        std::string name;
+
+        /// @param workerType which type of worker is.
+        WorkerType workerType;
 };
 
 enum class WorkerType{

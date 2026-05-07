@@ -81,7 +81,12 @@ public:
         /// @brief To set a Specific Actuator-> DeviceID.
         /// @param Actuator a pointer to the actuator object.
         /// @param newDeviceID a new int rappresenting the new deviceID.
-        //void SetParamActuators(Actuator* Actuator, int newDeviceID);
+        void SetParamActuators(Actuator* Actuator, int newDeviceID);
+
+
+        /// @brief Append a new acces code to the list already present. 
+        /// @param newAccessCode the new access code inserted.
+        void SetAccessCode(int newAccessCode);
     ///}@
 
     /// @name DEBUG and SERIALIZATION
@@ -103,6 +108,9 @@ public:
 
         /// @param actuatorsList a list that contain all the pointer to the Actuator created.
         std::vector<Actuator*> actuatorsList;
+
+        /// @param accessRoomIDs a list of all access codes created to access the room.
+        std::vector<int> accessRoomIDs;
 };
 
 #endif
