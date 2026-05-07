@@ -100,6 +100,8 @@ public:
 
         /// @param sensorList a list that contain all the pointer to the Sensors created.
         std::vector<Sensor*> sensorList;
+
+        /// @param actuatorsList a list that contain all the pointer to the Actuator created.
         std::vector<Actuator*> actuatorsList;
 };
 

@@ -38,15 +38,10 @@ public:
 
     /// @name BASIC HANDLING
     /// @{
-        ///@brief  
-        ///@return 
-        bool readState();
     /// @}
 
     /// @name GETTERS
     /// @{
-
-
         Actuator* GetActuator(); // TODO: Manage the pointer of the individual actuator object
         ///@brief To get the current actuator state
         ///@return the current actuator state 
@@ -79,8 +74,18 @@ public:
         ///@param state 1 = is active, 0 = not active.
         bool status;
 
+        /// @param actuatorType the ActuatorType that define the actuator.
+        ActuatorType actuatorType;
+
 
     
+};
+
+enum class ActuatorType{
+    BadgeReader,
+    WaterHoses,
+    Clima,
+    FireHazard
 };
 
 #endif

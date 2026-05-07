@@ -23,7 +23,8 @@ public:
         /// @brief Main Constructor that get an ID and an interval in ms
         /// @param deviceID unique, should be different for each sensor
         /// @param timeIntervals in ms beetween each polling 
-        Sensor(int deviceID,float timeIntervals);
+        /// @param sensorType unique type that define the sensor type : SmokeDetector,FireDetector,Humidity,Temperature
+        Sensor(int deviceID,float timeIntervals, SensorType sensorType);
 
         ~Sensor();
 
@@ -44,20 +45,23 @@ public:
 
     /// @name GETTERS
     /// @{
-        Sensor* GetSensor(); // TODO: Manage the pointer of the individual sensor object
-        ///@brief To get the current sensor Value
-        ///@return the current Value read by the sensor expressed post conditioning
+        Sensor* GetSensor(); // TODO: Manage the pointer of the individual sensor object.
+        ///@brief To get the current SensorType.
+        ///@return the SensorType.
+        SensorType GetSensorType();
+        ///@brief To get the current sensor Value.
+        ///@return the current Value read by the sensor expressed post conditioning.
         float GetCurrentValue();
-        /// @brief To get the time beetweem each Polling
-        /// @return Return the time expressed in ms  
+        /// @brief To get the time beetweem each Polling.
+        /// @return Return the time expressed in ms.
         float GetTimeIntervals();
     /// @}
 
     /// @name SETTERS
     /// @{
-        ///@brief To set sensor new polling time 
+        ///@brief To set sensor new polling time. 
         void SetTimeIntervals(float newTime);
-        /// @brief To set sensorID
+        /// @brief To set sensorID.
         void SetID();
 
 
@@ -65,7 +69,7 @@ public:
 
     /// @name DEBUG and SERIALIZATION
     /// @{
-        ///@brief Dump all the sensor data stored 
+        ///@brief Dump all the sensor data stored. 
         void Dump();
 
     /// @}
@@ -88,6 +92,18 @@ public:
 
         ///@param latestReadValues last 10 values read by the sensor.
         float latestReadValues[10];
+
+        ///@param sensorType the SensorType that define the sensor.
+        SensorType sensorType;
+};
+
+
+/// @brief A class that define a List of possible SensorTyper for Sensor.
+enum class SensorType{
+    SmokeDetector,
+    FireDetector,
+    Humidity,
+    Temperature
 };
 
 #endif
